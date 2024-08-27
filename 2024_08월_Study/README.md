@@ -1,5 +1,5 @@
 ## 프로그래머스 - 숫자 문자열 영단어
-
+```
 import java.lang.Integer;
 
 class Solution {
@@ -20,5 +20,5 @@ class Solution {
         return answer;
     }
 }
-
+```
 ## 프로그래머스 - 폰켓몬
