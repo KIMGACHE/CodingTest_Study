@@ -21,4 +21,30 @@ class Solution {
     }
 }
 ```
+
 ## 프로그래머스 - 폰켓몬
+```
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] nums) {
+        int answer = 0;
+        int count = 0;
+        int limit = nums.length/2;
+        
+        Arrays.sort(nums);
+        // 배열을 정렬
+        for (int i=0; i<nums.length ; i++) {
+            if(i==0) {count++;}
+            else if (nums[i] != nums[i-1]) {count++;}
+        }
+        // 오름차순으로 정렬한 배열에서 포켓몬의 종류를 count에 저장
+        if(limit < count) {answer=limit;}
+        else {answer= count;}
+        
+        return answer;
+    }
+}
+```
+
+## 
