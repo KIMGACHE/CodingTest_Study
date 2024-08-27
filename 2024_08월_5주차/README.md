@@ -47,4 +47,33 @@ class Solution {
 }
 ```
 
-## 
+## 프로그래머스 - 네트워크
+```
+class Solution {
+    public int solution(int n, int[][] computers) {
+        int answer = 0;
+        int arr[] = new int[n]; // 0은 미방문, 1은 방문
+        int count = 0;
+        
+        for(int i=0; i<n; i++) {
+            if( arr[i]==0) { // 방문하지 않은 노드일 경우
+                count++;
+                dfs(i, arr, computers); // dfs로 i와 연결된 모든 애들은 방문 표시함
+            }
+        }
+        
+	    answer = count;
+        return answer;
+    }
+    
+    public static void dfs(int index, int[] arr, int[][] computers) {
+            arr[index] = 1; // 현재 인덱스가 방문했다는걸 표시
+            
+            for (int i=0; i<arr.length; i++) {
+                if(computers[index][i]==1 && arr[i]==0) { // 해당 컴퓨터와 연결되어 있으면서 방문하지 않은 컴퓨터
+                    dfs(i,arr,computers); // 와 연결된 컴퓨터를 찾는다
+                }
+            }
+    }
+}
+```
