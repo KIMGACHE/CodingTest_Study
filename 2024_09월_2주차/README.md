@@ -1,6 +1,6 @@
 ## 프로그래머스 - 체육복
 ```
-import java.util.ArrayList;
+import java.util.*;
 
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
@@ -13,9 +13,9 @@ class Solution {
             std[lost[i]-1] -= 1; // 체육복을 도난당한 학생은 -1
         } 
         
-        for(int i=0; i<reverse.length; i++){
-            std[reverse[i]-1] += 1; // 여벌 체육복이 있는 학생은 +1
-        } 
+        for(int i=0; i<reserve.length; i++){
+            std[reserve[i]-1] += 1; // 여벌 체육복이 있는 학생은 +1
+        }
         
         for(int i=0; i<n; i++) {
             if(std[i]==1) {
