@@ -1,4 +1,4 @@
-### 프로그래머스-이상한 문자 만들기
+## 프로그래머스-이상한 문자 만들기
 ```
 import java.lang.*;
 class Solution {
