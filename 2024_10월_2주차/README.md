@@ -33,3 +33,27 @@ class Solution {
     }
 }
 ```
+## 프로그래머스 - 더 맵게
+```
+import java.util.PriorityQueue;
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        int answer = 0;
+        PriorityQueue<Integer> heap = new PriorityQueue<>();    // 우선순위 큐 생성
+        for(int food : scoville) {
+            heap.add(food);                                     // 우선순위 큐에 각 스코빌지수를 삽입
+        }
+        while(heap.peek()<K) {                                  // 큐에 가장 작은 값이 K를 넘는 순간 반복을 그만둔다.
+            if(heap.size()>=2) {                                // 큐의 사이즈가 2보다 클 경우 음식을 섞는다.
+                heap.add(heap.poll()+heap.poll()*2);
+                answer++;
+            } else {                                            // 큐의 사이즈가 2미만인 경우 스코빌 지수를 K이상으로 만들 수 없으므로 -1을 리턴
+                return -1;
+            }
+        }
+        return answer;
+    }
+}
+```
+
